@@ -1,0 +1,14 @@
+[
+  {
+    "username": "ana",
+    "password": "$2b$10$FAF5A3rYUtDVhz0rUwIAx.yPEC0s5WFkL47NVusIN0RWwXlX2TCsO",
+    "tipo": "cliente",
+    "dataRegistro": "01/05/2026 às 19:42"
+  },
+  {
+    "username": "yasmin",
+    "password": "$2b$10$kmrO1zM.okWPsJPcH23WAOLY80NrgloZz1zXj/33XwJ9ypMHXPaPO",
+    "tipo": "cliente",
+    "dataRegistro": "01/05/2026, 20:01:06"
+  }
+]

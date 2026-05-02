@@ -1,0 +1,158 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: black;
+    color: #0f0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;   
+    height: 100vh;  
+    z-index: -1;   
+    display: block; 
+}
+
+/* Telas de Login e Cadastro */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.auth-box {
+    background: rgba(0, 20, 0, 0.9);
+    padding: 30px;
+    border: 1px solid #0f0;
+    box-shadow: 0 0 15px #0f0;
+    border-radius: 5px;
+    width: 320px;
+}
+
+/* Inputs e Botões Estilo Matrix */
+.matrix-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: black;
+    border: 1px solid #050;
+    color: #0f0;
+    outline: none;
+}
+
+.matrix-input:focus {
+    border-color: #0f0;
+}
+
+.matrix-btn {
+    width: 100%;
+    padding: 10px;
+    background: #050;
+    color: #0f0;
+    border: 1px solid #0f0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.matrix-btn:hover {
+    background: #0f0;
+    color: black;
+}
+
+.switch-auth {
+    margin-top: 15px;
+    font-size: 0.8em;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Painel Principal (Layout Split) */
+.admin-panel {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.sidebar {
+    width: 250px;
+    background: rgba(0, 10, 0, 0.95);
+    border-right: 1px solid #0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #0f0;
+    padding-bottom: 10px;
+}
+
+.sidebar nav button {
+    width: 100%;
+    background: none;
+    border: 1px solid transparent;
+    color: #0f0;
+    padding: 12px;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.sidebar nav button:hover {
+    border-color: #0f0;
+    background: rgba(0, 255, 0, 0.1);
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    background: rgba(0, 5, 0, 0.8);
+}
+
+.matrix-box {
+    border: 1px solid #0f0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.matrix-table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.matrix-table th, .matrix-table td {
+    border: 1px solid #050;
+    padding: 12px;
+    text-align: left;
+}
+
+.matrix-table th {
+    background: #020;
+}
+
+.matrix-clock {
+    margin-top: auto;
+    font-size: 1.5em;
+    text-align: center;
+    border-top: 1px solid #0f0;
+    padding-top: 20px;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA MATRIX - v2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones para o painel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <!-- TELA DE LOGIN -->
+    <div id="loginScreen" class="auth-container">
+        <h1 class="matrix-text">SISTEMA MATRIX</h1>
+        <div class="auth-box">
+            <input type="text" id="userInput" placeholder="USUÁRIO" class="matrix-input">
+            <input type="password" id="passInput" placeholder="SENHA" class="matrix-input">
+            <button id="loginBtn" class="matrix-btn">ACESSAR</button>
+            <p class="switch-auth">Não tem acesso? <span onclick="showAuth('registerScreen')">SOLICITAR ENTRADA</span></p>
+        </div>
+    </div>
+
+    <!-- TELA DE CADASTRO -->
+    <div id="registerScreen" class="auth-container" style="display: none;">
+        <h1 class="matrix-text">SOLICITAR ACESSO</h1>
+        <div class="auth-box">
+            <input type="text" id="newRegUser" placeholder="NOVO USUÁRIO" class="matrix-input">
+            <input type="password" id="newRegPass" placeholder="SENHA" class="matrix-input">
+            <input type="password" id="confirmRegPass" placeholder="CONFIRMAR SENHA" class="matrix-input">
+            <button id="regBtn" class="matrix-btn">CADASTRAR</button>
+            <p class="switch-auth">Já possui acesso? <span onclick="showAuth('loginScreen')">VOLTAR</span></p>
+        </div>
+    </div>
+
+    <!-- PAINEL PRINCIPAL (ADMIN E CLIENTE) -->
+    <div id="adminPanel" class="admin-panel" style="display: none;">
+        <aside class="sidebar">
+            <h2 id="userNameDisplay">---</h2>
+            <nav>
+                <button onclick="showSection('secPerfil')"><i class="fas fa-user"></i> MEU PERFIL</button>
+                <button id="menuUsuarios" onclick="showSection('secUsuarios')"><i class="fas fa-users"></i> GERENCIAR</button>
+                <button onclick="location.reload()" style="color: #f44;"><i class="fas fa-sign-out-alt"></i> SAIR</button>
+            </nav>
+            <div id="real-time-clock" class="matrix-clock">00:00:00</div>
+        </aside>
+
+        <main class="content">
+            <!-- SEÇÃO: PERFIL DO CLIENTE -->
+            <section id="secPerfil" class="admin-section">
+                <h2 class="matrix-text">DADOS DO CIDADÃO</h2>
+                <div class="matrix-box">
+                    <p><strong>CODINOME:</strong> <span id="perfilNome">---</span></p>
+                    <p><strong>DATA DE INGRESSO:</strong> <span id="perfilData">---</span></p>
+                    <p><strong>STATUS:</strong> <span style="color: #0f0;">CONECTADO</span></p>
+                </div>
+
+                <div class="matrix-box" style="margin-top: 20px;">
+                    <h3 class="matrix-text">SEGURANÇA</h3>
+                    <p style="font-size: 0.8em; margin-bottom: 10px;">ALTERAR CHAVE DE ACESSO:</p>
+                    <input type="password" id="novaSenha" placeholder="NOVA SENHA" class="matrix-input">
+                    <input type="password" id="confirmaNovaSenha" placeholder="CONFIRMAR NOVA SENHA" class="matrix-input">
+                    <button id="btnAlterarSenha" class="matrix-btn">ATUALIZAR CHAVE</button>
+                </div>
+            </section>
+
+            <!-- SEÇÃO: GERENCIAMENTO (SÓ ADMIN VÊ) -->
+            <section id="secUsuarios" class="admin-section" style="display: none;">
+                <h2 class="matrix-text">CONEXÕES ATIVAS</h2>
+                <table width="100%" class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>USUÁRIO</th>
+                            <th>DATA REGISTRO</th>
+                            <th>AÇÃO</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaUsuarios">
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
